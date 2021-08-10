@@ -55,6 +55,16 @@ $ wget https://www.rttr.org/releases/rttr-0.9.6-src.tar.gz
   * [doxygen下载](https://www.doxygen.nl/download.html)
   * [rttr下载](https://www.rttr.org/download)
 * [安装boost](https://blog.csdn.net/s_lisheng/article/details/72871218)
-  * 打开vs开发人员命令提示
-  * bootstrap.bat运行
-  * 运行 b2.exe stage --toolset=msvc-14.0address-model=64 --stagedir="C:\boost\bin1.63.0\VC14.0"threading=multi --build-type=complete
+  * 打开```vs```开发人员命令提示
+  * ```bootstrap.bat```运行
+  * 运行```b2.exe stage --toolset=msvc-14.0address-model=64 --stagedir="C:\boost\bin1.63.0\VC14.0"threading=multi --build-type=complete```
+* 安装rttr
+  * ```cmake -G "Visual Studio 16 2019" ..```
+  * 在```VS```中编译
+  * 在```build```目录运行```cpack```命令
+* 使用rttr
+  * 附加包含目录```$(RTTR_DIR)\include```
+  * 附加库目录```$(RTTR_DIR)\lib```
+  * 附加依赖项```rttr_core.lib```
+  * 环境```PATH=$(RTTR_DIR)\bin;$(PATH)```
+  * 预处理器定义```RTTR_DLL```
